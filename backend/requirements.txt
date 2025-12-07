@@ -1,0 +1,15 @@
+# --- CORE API & ASYNC ---
+fastapi
+uvicorn[standard]
+httpx
+
+# --- MACHINE LEARNING & NLP ---
+scikit-learn
+numpy 
+scipy # Required by scikit-learn
+joblib # Required by scikit-learn
+nltk # Used for VADER data and general text utilities
+vaderSentiment # The ML-based sentiment classifier
+
+# --- DATA & UTILITIES ---
+duckduckgo-search

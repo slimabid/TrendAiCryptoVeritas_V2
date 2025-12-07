@@ -1,0 +1,200 @@
+/* --- GLOBAL RESET --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #050505;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* --- FORCE CENTER THE REACT ROOT --- */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* Horizontally centers the app-container */
+  background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #050505 60%); /* Ambient Light */
+}
+
+/* --- MAIN CONTAINER --- */
+.app-container {
+  width: 100%;
+  max-width: 1100px; /* Limits the width so it looks good */
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers items vertically inside */
+  gap: 40px;
+}
+
+/* --- HEADER --- */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: -3px;
+  background: linear-gradient(to bottom, #ffffff, #64748b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.logo span {
+  color: #8b5cf6;
+  -webkit-text-fill-color: #8b5cf6;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* --- SEARCH BAR --- */
+.search-box-wrapper {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 22px 30px;
+  font-size: 1.2rem;
+  border-radius: 16px;
+  border: 1px solid #334155;
+  background: rgba(15, 23, 42, 0.6);
+  color: white;
+  backdrop-filter: blur(12px);
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.search-input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.25);
+}
+
+.search-btn {
+  position: absolute;
+  right: 12px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  background: #8b5cf6;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-btn:hover {
+  background: #7c3aed;
+}
+
+/* --- DASHBOARD GRID --- */
+.dashboard-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Forces 3 columns */
+  gap: 25px;
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- CARDS --- */
+.card {
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid #334155;
+  padding: 30px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  min-height: 200px;
+}
+
+.card.highlight {
+  border-color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.card-title {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+}
+
+.big-text {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* --- SENTIMENT BAR --- */
+.full-width-card {
+  grid-column: span 3; /* Spans all columns */
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid #334155;
+  padding: 25px;
+  border-radius: 24px;
+}
+
+.heatmap {
+  display: flex;
+  height: 80px;
+  align-items: flex-end;
+  gap: 3px;
+  margin-top: 15px;
+}
+
+.heat-bar {
+  flex: 1;
+  border-radius: 4px;
+  opacity: 0.8;
+  transition: all 0.3s;
+}
+
+.heat-bar:hover {
+  transform: scaleY(1.2);
+  opacity: 1;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr; /* Stack on mobile */
+  }
+  .full-width-card {
+    grid-column: span 1;
+  }
+  .logo {
+    font-size: 3rem;
+  }
+}
