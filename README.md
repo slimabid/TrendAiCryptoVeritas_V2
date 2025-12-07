@@ -1,89 +1,16 @@
-# 🛡️ TrendAI: Veritas Protocol
-
-**A Real-Time Market Surveillance & Narrative Verification Engine.**
-
-TrendAI is a full-stack intelligence dashboard that detects crypto bot attacks, quantifies "hype," and verifies market rumors against trusted news sources in real-time.
-
-![Project Status](https://img.shields.io/badge/Status-Active-success)
-![Tech Stack](https://img.shields.io/badge/Stack-FastAPI%20%7C%20React-blue)
-
-## 🚀 Features
-- **Bot Attack Detection:** Analyzes author-to-post ratios to flag coordinated manipulation.
-- **Narrative Verification:** Cross-references social claims with trusted financial news (Bloomberg, SEC, Reuters).
-- **Sentiment DNA:** Visualizes the "mood" of the market using a 100-post heat map.
-- **Risk Scoring:** Assigns a 0-100 risk score based on hype, bot activity, and news verification.
-
----
-
-## 🛠️ Installation & Setup
-
-This project uses a **Python Backend** and a **React Frontend**. You need to run both simultaneously.
-
-### 1. Backend Setup (Python)
-Open your **first terminal** and run:
-
-```bash
-# Go to the backend folder
-cd backend
-
-# Install the AI & API libraries
-pip install fastapi uvicorn textblob httpx duckduckgo-search
-
-# Start the Intelligence Engine
-uvicorn main:app --reload
-> The backend is now running on http://127.0.0.1:8000
-
-2. Frontend Setup (React)
-Open a second terminal (keep the first one running!) and run:
-
-Bash
-
-# Go to the frontend folder
-cd frontend
-
-# Install dependencies (only needs to be done once)
-npm install
-
-# Launch the Dashboard
-npm run dev
-> The dashboard is now accessible at http://localhost:5173
-
-🖥️ How to Use
-Open the Localhost URL shown in your second terminal (usually http://localhost:5173).
-
-Type a coin or topic in the search bar (e.g., "Bitcoin", "PEPE", "ETF Approval").
-
-Hit Enter or click SCAN.
-
-View the Risk Score, Verdict, and Live Feed instantly.
-
-📂 Project Structure
-Plaintext
-
-TrendAI-Veritas/
-├── backend/            # Python FastAPI Server
+🛡️ TrendAI: Veritas Protocol (ML Integrated)A Full-Stack Financial Intelligence Engine designed to combat social media manipulation and quantify investment risk using Machine Learning.This project demonstrates proficiency in asynchronous API design, supervised ML deployment, and performance-optimized React UI development.🚀 Key FeaturesComponentTechnologyInnovationSentiment AnalysisLogistic Regression ML PipelineReplaced heuristic scoring with a true supervised classifier for accurate, pattern-based prediction.System AlertsDynamic Predictive ThresholdingAlert levels (BULLISH/BEARISH) adapt automatically based on the statistical intensity of current market volatility.Risk ScoringComposite AlgorithmCombines ML sentiment volatility, bot detection heuristics, and news verification checks into a single 0-99 Risk Score.FrontendReact / Custom CSS3Clean, centered "Fintech Cyberpunk" dashboard for stable, high-performance data visualization.🛠️ Installation & ExecutionThis project requires a Python Backend and a React Frontend running simultaneously.1. Backend Setup (Python)Open your first terminal and navigate to the backend folder.Install all required libraries (including scikit-learn and all API tools):Bashpip install -r requirements.txt
+Start the Intelligence Engine:Bashuvicorn main:app --reload
+(Keep this terminal open. The engine is running at http://127.0.0.1:8000)2. Frontend Setup (React)Open a second terminal window and navigate to the frontend folder.Install JavaScript dependencies:Bashnpm install
+Launch the Dashboard:Bashnpm run dev
+(The dashboard URL will open in your browser, usually http://localhost:5173)🧪 Testing the ML PipelineOpen the dashboard in your browser.To test ML Sentiment: Submit a query containing terms the model was trained on (e.g., "Bitcoin pump moon to $100k" or "stock market crash dump sell"). The Sentiment DNA heatmap will react immediately based on the ML prediction scores.To test Verification: Submit a phrase like "Apple news official" to see the system check against authoritative domains.📂 Project StructurePlaintextTrendAI-Veritas/
+├── backend/            # Python FastAPI Server (ML Execution)
 │   ├── main.py         # API Endpoints
-│   └── veritas.py      # Logic (Sentiment, Bots, Search)
+│   ├── veritas.py      # Core Logic & ML Integration
+│   ├── ml_model.py     # Logistic Regression Pipeline (The Classifier)
+│   └── requirements.txt# All Python Dependencies (ML/API)
 │
-├── frontend/           # React Dashboard
-│   ├── src/
-│   │   ├── App.jsx     # Main UI Logic
-│   │   └── App.css     # Cyberpunk Styling
+├── frontend/           # React Dashboard (UI)
+│   ├── src/            # JavaScript Components & Custom CSS
 │   └── package.json    # React Dependencies
 │
 └── README.md           # Documentation
-⚠️ Troubleshooting
-"Fetch Error"? → Make sure the Python terminal is running and says "Application startup complete".
-
-"Vite not found"? → Run npm install inside the frontend folder again.
-
-Layout issues? → Refresh the page; the CSS is designed to auto-center on any screen.
-
-
-### **How to Upload This:**
-1.  Save the file as **`README.md`**.
-2.  Run: `git add README.md`
-3.  Run: `git commit -m "Add professional documentation"`
-4.  Run: `git push origin main`
-
-Now check your GitHub repo—it will look like a serious open-source tool!
